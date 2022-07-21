@@ -3,6 +3,8 @@
 const todos = document.querySelectorAll(".todo");
 const all_status = document.querySelectorAll(".status");
 
+let draggableTodo = null;
+
 
 
 
@@ -28,15 +30,15 @@ all_status.forEach(status => {
 
 
 function dragStart(){
-
+    draggableTodo = this;
 }
 
 function dragEnd(){
-
+    draggableTodo = null;
 }
 
-function dragOver(){
-
+function dragOver(e){
+    e.preventDefault();
 }
 
 function dragEnter(){
@@ -49,7 +51,7 @@ function dragLeave(){
 
 
 function dragDrop(){
-    
+    this.appendChild(draggableTodo);
 }
 
 

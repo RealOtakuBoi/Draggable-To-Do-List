@@ -51,3 +51,19 @@ body{
     padding: 0.5rem 1rem;
 }
 
+.add-btn{
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    background: #3737378b;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.add-btn:hover{
+    transform: scale(0.95);
+}
+

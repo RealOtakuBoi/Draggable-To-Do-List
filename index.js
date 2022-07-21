@@ -55,10 +55,16 @@ todoSubmit.addEventListener("click", createTodo);
 
 function dragStart() {
     draggableTodo = this;
+    setTimeout(() => {
+        this.style.display = "none";
+    },0)
 }
 
 function dragEnd() {
     draggableTodo = null;
+    setTimeout(() => {
+        this.style.display = "block";
+    },0)
 }
 
 function dragOver(e) {
@@ -102,6 +108,7 @@ function createTodo(){
 
     todoDiv.addEventListener("dragstart", dragStart);
     todoDiv.addEventListener("dragend", dragEnd);
+    document.getElementById("todo_input").value = "";
 
     no_status.appendChild(todoDiv);
     span.appendChild(spanText);   

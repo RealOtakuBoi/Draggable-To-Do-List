@@ -4,6 +4,7 @@ const btns = document.querySelectorAll("[data-target]");
 const close_modals = document.querySelectorAll(".close-modal");
 const overlay = document.getElementById("overlay");
 const todoSubmit = document.querySelector("#todo_submit");
+const closeBtn = document.querySelectorAll(".close");
 // const no_status = document.querySelector("#no_status");
 
 let draggableTodo = null;
@@ -90,10 +91,23 @@ function createTodo(){
     const span = document.createElement("span");
     span.classList.add("close");
     const spanText = document.createTextNode("\u00D7");
+    span.appendChild(spanText);
+
+    span.addEventListener("click", () => {
+        span.parentElement.style.display = "none";
+    });
+
+
     todoDiv.appendChild(span);
 
+    todoDiv.addEventListener("dragstart", dragStart);
+    todoDiv.addEventListener("dragend", dragEnd);
+
     no_status.appendChild(todoDiv);
-    span.appendChild(spanText);
+    span.appendChild(spanText);   
+                           //ID`s can now directly be used
+    todo_form.classList.remove("active");
+    overlay.classList.remove("active");
 }
 
 
@@ -102,4 +116,12 @@ function createTodo(){
 
 
 
+
+
+
+closeBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.style.display = "none";
+  });
+});
 

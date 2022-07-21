@@ -52,6 +52,7 @@ body{
 }
 
 .add-btn{
+    font-size: 1.5rem;
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
     width: 100%;
@@ -67,3 +68,28 @@ body{
     transform: scale(0.95);
 }
 
+.todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+}
+
+.todo .close{
+    position: absolute;
+    font-size: 2rem;
+    right: 1rem;
+    top: 0;
+    color: #ccc;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.todo .close:hover{
+    color: red;
+}

@@ -12,6 +12,7 @@
     margin: 0;
     font-family: 'Oswald',Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
+    transition: 0.2s;
 
 }
 

@@ -21,7 +21,35 @@ all_status.forEach((status) => {
 
 
 
+btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        document.querySelector(btn.dataset.target).classList.add("active");
+        overlay.classList.add("active");
+    });
+});
+
+close_modals.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const modal = btn.closest(".modal");
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+    });
+});
+
+window.onclick = (event) => {
+    if (event.target == overlay) {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach((modal) => modal.classList.remove("active"));
+        overlay.classList.remove("active");
+    }
+};
+
+
+
 todoSubmit.addEventListener("click", createTodo);
+
+
+
 
 function dragStart() {
     draggableTodo = this;
@@ -49,28 +77,7 @@ function dragDrop() {
 }
 
 
-btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        document.querySelector(btn.dataset.target).classList.add("active");
-        overlay.classList.add("active");
-    });
-});
 
-close_modals.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        const modal = btn.closest(".modal");
-        modal.classList.remove("active");
-        overlay.classList.remove("active");
-    });
-});
-
-window.onclick = (event) => {
-    if (event.target == overlay) {
-        const modals = document.querySelectorAll(".modal");
-        modals.forEach((modal) => modal.classList.remove("active"));
-        overlay.classList.remove("active");
-    }
-};
 
 
 

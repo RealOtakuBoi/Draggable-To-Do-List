@@ -3,7 +3,8 @@ const all_status = document.querySelectorAll(".status");
 const btns = document.querySelectorAll("[data-target]");
 const close_modals = document.querySelectorAll(".close-modal");
 const overlay = document.getElementById("overlay");
-const todoSubmit = document.querySelector("#todo_input");
+const todoSubmit = document.querySelector("#todo_submit");
+// const no_status = document.querySelector("#no_status");
 
 let draggableTodo = null;
 
@@ -76,6 +77,24 @@ function dragDrop() {
     this.appendChild(draggableTodo);
 }
 
+
+function createTodo(){
+    const todoDiv = document.createElement("div");
+    const inputVal = document.querySelector("#todo_input").value;
+    const txt = document.createTextNode(inputVal);
+
+    todoDiv.appendChild(txt);
+    todoDiv.classList.add("todo");
+    todoDiv.setAttribute("draggable","true");
+
+    const span = document.createElement("span");
+    span.classList.add("close");
+    const spanText = document.createTextNode("\u00D7");
+    todoDiv.appendChild(span);
+
+    no_status.appendChild(todoDiv);
+    span.appendChild(spanText);
+}
 
 
 
